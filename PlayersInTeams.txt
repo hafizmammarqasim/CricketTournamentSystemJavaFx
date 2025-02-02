@@ -1,0 +1,10 @@
+/Images/shaheen.jpeg,001,Shaheen Afridi,24,Pakistan,Lahore,Bowler,10,178,23,0,0
+/Images/babar.jpeg,002,Babar Azam,28,Pakistan,Peshawar,Batsman,56,1787,102,25,03
+/Images/Rizwan.jpeg,003,M Rizwan,29,Pakistan,Multan,Batsman,10,178,23,0,0
+/Images/shadab.jpeg,004,Shadab Khan,30,Pakistan,Islamabad,Bowler,14,178,23,0,0
+/Images/abdullah.jpeg,005,Abdullah Shafique,30,Pakistan,Lahore,Batsman,10,178,23,0,1
+/Images/boult.jpeg,006,Trent Boult,30,New Zealand,Lahore,Bowler,14,178,23,0,0
+/Images/saim.jpeg,007,Saim Ayub,30,Pakistan,Peshawar,Batsman,14,178,23,0,0
+/Images/harry.jpeg,008,Harry Brook,30,England,Lahore,Batsman,14,178,23,0,0
+/Images/kohli.jpeg,009,Virat Kohli,30,India,Lahore,Batsman,14,178,23,0,0
+/Images/amir.jpeg,001,abdullah,7,pakistani,Lahore,Bowler,8,9,78,6,78

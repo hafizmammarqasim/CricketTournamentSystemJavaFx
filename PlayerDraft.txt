@@ -1,0 +1,12 @@
+001;Ali;20;Multan;Pak;33;Batsman;563;94;8;2
+002;John;25;Lahore;England;83;Bowler;457;87;6;2
+003;musa;25;Lahore;England;83;Bowler;457;87;6;2
+004;akram;25;Lahore;England;83;Bowler;457;87;6;2
+005;nabi;25;Lahore;England;83;Bowler;457;87;6;2
+006;aslam;25;Lahore;England;83;Bowler;457;87;6;2
+007;azam;25;Lahore;England;83;Bowler;457;87;6;2
+008;younis;25;Lahore;England;83;Bowler;457;87;6;2
+009;yousif;25;Lahore;England;83;Bowler;457;87;6;2
+010;shahbaz;25;Lahore;England;83;Bowler;457;87;6;2
+011;khizer;25;Lahore;England;83;Bowler;457;87;6;2
+012;imran;25;Lahore;England;83;Bowler;457;87;6;2

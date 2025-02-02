@@ -1,0 +1,6 @@
+Peshawar,asdfa,ewertg,s,aa,d,Peshawar,3,1,2,2
+Lahore,as,ss,ffrrr,dd,qq,Lahore,1,0,1,0
+Multan,u,i,f,k,e,Multan,2,1,1,2
+Islamabad,ali,skjn,wee,ewt,oit,Islamabad,2,1,1,2
+Karachi,Shan,Akram,Ammar,Aqib,Salman Iqbal,Karachi,0,0,0,0
+Quetta,Saifi,Moin Khan,Ali,Aqib,Nadeem Umar,Quetta,0,0,0,0
