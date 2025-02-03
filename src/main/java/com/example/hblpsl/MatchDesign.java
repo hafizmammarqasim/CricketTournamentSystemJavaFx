@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 public class MatchDesign {
 
-    public Scene createMatchScene (Stage stage, Scene scene){
+    public Scene createMatchScene (Stage stage, Scene scene, Match match){
 
         VBox vBox = new VBox(10);
         Label teamLabel = new Label("Welcome to Player Page!");

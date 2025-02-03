@@ -1,15 +1,15 @@
-Peshawar vs Lahore, December 15 2024, Gadafi Stadium, null, Capacity: null, Result: Not Played Yet
-Multan vs Islamabad, December 16 2024, Gadafi Stadium, null, Capacity: null, Result: Not Played Yet
-Peshawar vs Karachi, December 17 2024, Gadafi Stadium, null, Capacity: null, Result: Not Played Yet
-Lahore vs Multan, December 18 2024, Gadafi Stadium, null, Capacity: null, Result: Not Played Yet
-Peshawar vs Islamabad, December 19 2024, Gadafi Stadium, null, Capacity: null, Result: Not Played Yet
-Lahore vs Karachi, December 20 2024, Gadafi Stadium, null, Capacity: null, Result: Not Played Yet
-Peshawar vs Multan, December 21 2024, Gadafi Stadium, null, Capacity: null, Result: Not Played Yet
-Lahore vs Islamabad, December 22 2024, Gadafi Stadium, null, Capacity: null, Result: Not Played Yet
-Peshawar vs Quetta, December 23 2024, Gadafi Stadium, null, Capacity: null, Result: Not Played Yet
-Multan vs Karachi, December 24 2024, Gadafi Stadium, null, Capacity: null, Result: Not Played Yet
-Lahore vs Quetta, December 25 2024, Gadafi Stadium, null, Capacity: null, Result: Not Played Yet
-Islamabad vs Karachi, December 26 2024, Gadafi Stadium, null, Capacity: null, Result: Not Played Yet
-Multan vs Quetta, December 27 2024, Gadafi Stadium, null, Capacity: null, Result: Not Played Yet
-Islamabad vs Quetta, December 28 2024, Gadafi Stadium, null, Capacity: null, Result: Not Played Yet
-Karachi vs Quetta, December 29 2024, Gadafi Stadium, null, Capacity: null, Result: Not Played Yet
+Peshawar,Lahore,0,0,0,0,0,0,Not Played Yet,false
+Multan,Islamabad,0,0,0,0,0,0,Not Played Yet,false
+Peshawar,Multan,0,0,0,0,0,0,Not Played Yet,false
+Lahore,Multan,0,0,0,0,0,0,Not Played Yet,false
+Peshawar,Islamabad,0,0,0,0,0,0,Not Played Yet,false
+Lahore,Islamabad,0,0,0,0,0,0,Not Played Yet,false
+Peshawar,Karachi,0,0,0,0,0,0,Not Played Yet,false
+Lahore,Karachi,0,0,0,0,0,0,Not Played Yet,false
+Peshawar,Quetta,0,0,0,0,0,0,Not Played Yet,false
+Lahore,Quetta,0,0,0,0,0,0,Not Played Yet,false
+Multan,Karachi,0,0,0,0,0,0,Not Played Yet,false
+Islamabad,Karachi,0,0,0,0,0,0,Not Played Yet,false
+Multan,Quetta,0,0,0,0,0,0,Not Played Yet,false
+Islamabad,Quetta,0,0,0,0,0,0,Not Played Yet,false
+Karachi,Quetta,0,0,0,0,0,0,Not Played Yet,false

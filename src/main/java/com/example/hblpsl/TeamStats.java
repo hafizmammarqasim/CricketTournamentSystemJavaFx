@@ -196,24 +196,34 @@ public class TeamStats {
             BufferedReader reader = new BufferedReader(new FileReader(MATCH_FILE));
             String line;
             while((line = reader.readLine()) != null) {
-                VBox vBox0 = new VBox(5);
-
-                vBox0.setStyle("-fx-background-color: rgb(255,253,208); -fx-max-width: 300px; -fx-max-height: 100px; -fx-font-size: 16px; -fx-font-weight: bold;");
+                VBox innerVBox = new VBox(5);
+                innerVBox.setStyle("-fx-background-color: rgb(255,253,208); -fx-max-width: 300px; -fx-max-height: 100px; -fx-font-size: 16px; -fx-font-weight: bold;");
 
                 String[] array = line.split(",");
                 String teams = array[0];
-                Label match = new Label(array[0]);
-                Label date = new Label(array[1]);
+                Label team1 = new Label(array[0]);
+                Label vs = new Label(" vs ");
+                Label team2 = new Label(array[1]);
+
+                HBox combineTeams = new HBox();
+                combineTeams.getChildren().addAll(team1,vs,team2);
+                combineTeams.setAlignment(Pos.CENTER);
+               // Label date = new Label(array[1]);
                 Label venue = new Label(array[2]);
                 String[] arrayOfTeams = teams.split(" vs ");
 //                String team1 = arrayOfTeams[0];
 //                String team2 = arrayOfTeams[1];
-                vBox0.setAlignment(Pos.CENTER);
+                innerVBox.setAlignment(Pos.CENTER);
 
-                if (text.equalsIgnoreCase(arrayOfTeams[0]) || text.equalsIgnoreCase(arrayOfTeams[1])){
-                    vBox0.getChildren().addAll(match,date,venue);
+                if (text.equalsIgnoreCase(array[0]) || text.equalsIgnoreCase(array[1])){
+                    Button button = new Button("Play Match");
+                    innerVBox.getChildren().addAll(combineTeams,venue,button);
+                    //button.setOnAction(e->{
+                      //  MatchDesign matchDesign = new MatchDesign();
+                    //    matchDesign.createMatchScene(stage,scene,)
+                   // });
                 }
-                vBox.getChildren().add(vBox0);
+                vBox.getChildren().add(innerVBox);
             }
         } catch (IOException e1) {
             e1.printStackTrace();

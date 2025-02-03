@@ -17,11 +17,84 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Tournament {
-    private ArrayList<Team> teams = new ArrayList<>();
+    private  ArrayList<Team> teams = new ArrayList<>();
     private Schedule schedule = new Schedule();
+    private ArrayList <Match> matches;
     private ArrayList<Ground> grounds = new ArrayList<>();
     private static final String TEAM_FILE = "Teams.txt";
     private static final String MATCH_FILE = "Match.txt";
+
+    public void addTeam(ArrayList<Team> teams){
+        this.teams = teams;
+    }
+
+
+    public void Schedule() throws IOException {
+        Match tempMatch;
+        Ground tempGround;
+        schedule = new Schedule();
+        Schedule remainingMatches = new Schedule();
+        matches = new ArrayList<>();
+        //Syntax for Date
+        LocalDate date = LocalDate.of(2025,1,15);
+
+        //Creating random matches
+        int size = teams.size();
+        if(size>=2) {
+            for (int i = 0; i < size-1; i++) {
+                for (int j=i; j<size; j++) {
+                    if (teams.get(i) != teams.get(j)){
+                        tempGround = checkGround(teams.get(i),teams.get(j));
+                        tempMatch = new Match(teams.get(i),teams.get(j),(tempGround!=null)? tempGround : new Ground("Qadafi","Lahore","30000","94m") );
+                        matches.add(tempMatch);
+                    }}}
+
+            if(!matches.isEmpty()){
+                for(Match match: matches){
+                    remainingMatches.addNewMatch(match); }
+            }
+
+            File file = new File("match.txt");
+            if(file.exists()) {
+                for (Match match : remainingMatches.getMatches()) {
+                    readWinStatus(match,file);
+                }
+            } else {
+                System.out.println("Past Data is not available. File does not exist");
+            }
+
+            //Sorting Matches
+
+            boolean status;
+            do{
+                status = false;
+                for(int i=0; i<remainingMatches.getMatches().size(); i++) {
+                    if (schedule.getMatches().isEmpty() || remainingMatches.getMatches().get(i) != null && !(remainingMatches.getMatches().get(i).teamsComparison(schedule.getMatches().getLast()))) {
+                        tempMatch = remainingMatches.getMatches().get(i);
+                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd,yyyy");
+                        tempMatch.addDate(date.format(formatter));
+                        date = date.plusDays(1);
+                        schedule.addNewMatch(tempMatch);
+                        remainingMatches.getMatches().remove(i);
+                        status = true;
+                    }
+                }
+            } while(!remainingMatches.getMatches().isEmpty() && status);
+
+            //Bachay huay matches yaha se assign houn ge
+            if(!remainingMatches.getMatches().isEmpty()){
+                for (Match remainingmatch : remainingMatches.getMatches()) {
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd,yyyy");
+                    tempMatch = remainingmatch;
+                    tempMatch.addDate(date.format(formatter));
+                    schedule.addNewMatch(tempMatch);
+                    date = date.plusDays(1);
+                }
+            }
+            schedule.displayMatches();
+//            match(schedule.getMatches().getFirst());
+        }
+    }
 
     public void readTeamsFromFile() {
         try {
@@ -46,7 +119,7 @@ public class Tournament {
     }
 
     public void scheduleMatches() {
-        Match10 tempMatch;
+        Match tempMatch;
         LocalDate date = LocalDate.of(2024, 12, 15);
 
         // Ensure enough teams for matches
@@ -56,11 +129,11 @@ public class Tournament {
         }
 
         // Creating matches for teams
-        ArrayList<Match10> remainingMatches = new ArrayList<>();
+        ArrayList<Match> remainingMatches = new ArrayList<>();
         for (int i = 0; i < teams.size() - 1; i++) {
             for (int j = i + 1; j < teams.size(); j++) {
                 Ground ground = checkGround(teams.get(i), teams.get(j));
-                tempMatch = new Match10(
+                tempMatch = new Match(
                         teams.get(i),
                         teams.get(j),
                         ground != null ? ground : new Ground("Gadafi", "Lahore", "30000", "94m")
@@ -93,7 +166,7 @@ public class Tournament {
 
         // Assign dates for any remaining matches
         if (!remainingMatches.isEmpty()) {
-            for (Match10 remainingMatch : remainingMatches) {
+            for (Match remainingMatch : remainingMatches) {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd yyyy");
                 tempMatch = remainingMatch;
                 tempMatch.addDate(date.format(formatter));
@@ -107,9 +180,8 @@ public class Tournament {
 
     public void writeScheduleToFile() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(MATCH_FILE))) {
-            for (Match10 match : schedule.getMatches()) {
+            for (Match match : schedule.getMatches()) {
                 writer.write(match.toString());
-                writer.newLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -125,7 +197,21 @@ public class Tournament {
         return !grounds.isEmpty() ? grounds.get(0) : null;
     }
 
-
+    public void readWinStatus(Match match, File file){
+        try(BufferedReader reader = new BufferedReader(new FileReader(file))){
+            String line;
+            while ((line = reader.readLine())!=null){
+                String[] data = line.split(",");
+                if(match.getTeam1().getName().equals(data[0]) && match.getTeam2().getName().equals(data[1])){
+                    match.assignData(data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9]);
+                    match.decideWinner();
+                    return;
+                }
+            }
+        } catch (IOException e){
+            System.out.println("Error in reading Match Result File "+e.getMessage());
+        }
+    }
 
 
     public Scene createSchedule(Stage stage, Scene scene) {

@@ -1,6 +1,6 @@
 package com.example.hblpsl;
 
-public class Match10 {
+public class Match {
     private Team team1;
     private Team team2;
     private String result = "Not Played Yet";
@@ -14,13 +14,13 @@ public class Match10 {
     private int Team2WicketsFallen;
     private boolean playStatus = false;
 
-    public Match10(Team team1, Team team2, Ground venue) {
+    public Match(Team team1, Team team2, Ground venue) {
         this.team1 = team1;
         this.team2 = team2;
         this.venue = venue;
     }
 
-    public Match10(Team team1, Team team2, Ground venue, String date) {
+    public Match(Team team1, Team team2, Ground venue, String date) {
         this.team1 = team1;
         this.team2 = team2;
         this.venue = venue;
@@ -143,7 +143,7 @@ public class Match10 {
         if(this == o) return true;
         if(this.getClass() != o.getClass()) return false;
 
-        Match10 tempSchedule = (Match10) o;
+        Match tempSchedule = (Match) o;
         if(this.team1.getName().equals(tempSchedule.getTeam1().getName())  || (this.team1.getName().equals(tempSchedule.getTeam2().getName()))){
             return true;
         }
@@ -171,10 +171,10 @@ public class Match10 {
         }
     }
 
-    public String writeMatchResult(){
+    public String toString(){
         return team1.getName()+","+team2.getName()+","+Team1Runs+","+Team2Runs+","+Team1WicketsFallen+","+Team2WicketsFallen+","+Team1WicketsTaken+","+Team2WicketsTaken+","+result+","+playStatus+"\n";
     }
 
 
 }
-}
+
